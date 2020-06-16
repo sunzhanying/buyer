@@ -1,0 +1,70 @@
+<view class='orderDetail'>
+  <view class="gap"></view>
+  <view class="detail_top">
+
+    <view class="line">
+      <view class="leftTxt">名称</view>
+      <view class="detailBox num_blod">
+        {{orderList.spXx.spmc}}
+      </view>
+    </view>
+    <view class="line">
+      <view class="leftTxt">价格</view>
+      <view class="detailBox num_blod">
+        ￥{{orderList.scj}}
+      </view>
+    </view>
+    <view class="line">
+      <view class="leftTxt">数量</view>
+      <view class="detailBox num_blod">
+        {{orderList.sl}}
+      </view>
+    </view>
+  </view>
+
+  <view class="cardTicket" wx:if='{{orderList.zt != 1}}'>
+    <view class="title">卡券</view>
+    <view class="detailList">
+
+      <view class="item" wx:if='{{orderList.qyhsMxList[0].type == 1}}' wx:for='{{orderList.qyhsMxList}}' key='*this'>
+        <image class="productImg" src="{{orderList.spXx.img}}"  data-url='{{orderList.spXx.img}}' bindtap='previewImageBtn'> </image>
+        <view class="productInfo">
+          <view class="itemInfo">卡密 ： {{item.km}}</view>
+          <view class="itemInfo">有效期至 ： {{item.yxqDate}}</view>
+        </view>
+        <view class="line1"></view>
+      </view>
+
+      <view class="item" wx:if='{{orderList.qyhsMxList[0].type == 2}}' wx:for='{{orderList.qyhsMxList}}' key='*this'>
+        <image class="productImg" src="{{orderList.spXx.img}}" data-url='{{orderList.spXx.img}}' bindtap='previewImageBtn'> </image>
+
+        <view class="productInfo">
+          <view class="itemInfo">卡号：{{item.kh}}</view>
+          <view class="itemInfo">卡密：{{item.km}}</view>
+          <view class="itemInfo">有效期至：{{item.yxqDate}}</view>
+        </view>
+        <view class="line1"></view>
+      </view>
+
+      <view class="item" wx:if='{{orderList.qyhsMxList[0].type == 3}}' wx:for='{{orderList.qyhsMxList}}' key='*this'>
+        <image class="productImg" src="{{item.img}}" data-url='{{item.img}}' bindtap='previewImageBtn'> </image>
+        <view class="productInfo">
+          <view class="itemInfo">兑换码：{{item.kh}}</view>
+          <view class="itemInfo">有效期至：{{item.yxqDate}}</view>
+        </view>
+        <view class="line1"></view>
+      </view>
+
+    </view>
+
+  </view>
+  <view class="useLegend" wx:if='{{orderList.zt != 1}}'>使用说明
+    <view class="legengDetail">{{orderList.spXx.sysm}}</view>
+  </view>
+  <view class="footer" wx:if='{{orderList.zt == 1}}' bindtap="goPay">
+    <view class="sum">实付金额：
+      <text class="yellow">￥{{orderList.actualPayment}}</text>
+    </view>
+    <view class="enter" bindtap="pay">结算</view>
+  </view>
+</view>

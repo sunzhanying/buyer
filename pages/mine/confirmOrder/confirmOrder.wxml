@@ -1,0 +1,34 @@
+<!--pages/mine/confirmOrder/confirmOrder.wxml-->
+<view class="confirmOrder">
+  <view class="bgc"></view>
+  <view class="orderCard">
+    <view class="itemInfo">
+      <view class="itemTitle">名称</view>
+      <view class="itemContent num_blod">{{articleDetail.spmc}}</view>
+    </view>
+    <view class="itemInfo">
+      <view class="itemTitle">价格</view>
+      <view class="itemContent num_blod">￥{{articleDetail.qyjg.csj}}</view>
+    </view>
+    <view class="itemInfo">
+      <view class="itemTitle">数量</view>
+      <view class="itemContent num_blod">{{num}}</view>
+    </view>
+    <view class="total">
+      <view class="all">合计</view>
+      <view class="number num_blod">￥{{allPrice}}</view>
+    </view>
+  </view>
+  <!-- 说明 -->
+  <view class="description">
+    <view class="title">使用说明</view>
+    <view class="content">{{articleDetail.sysm}}</view>
+  </view>
+  <view class="footer">
+
+    <view class="sum">实付金额：
+      <text class="yellow">￥{{allPrice}}</text>
+    </view>
+    <view class="enter" bindtap="pay">结算</view>
+  </view>
+</view>

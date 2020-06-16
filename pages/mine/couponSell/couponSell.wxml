@@ -1,0 +1,97 @@
+<view class='couponSell'>
+  <view class="cardInfo">
+    <view class="item">
+      <view class="title">名称</view>
+      <view class="detail">
+        携程50元礼品卡
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">价格</view>
+      <view class="detail">
+        ￥47.5
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">来源</view>
+      <view class="detail">
+        ********
+      </view>
+    </view>
+  </view>
+
+  <view class="cardCode">
+    <!-- 切换 -->
+    <view class="toggle">
+      <view class="card_detail {{index == 1 ?'active':''}}" bindtap="toggleClick" data-index="1">
+        卡密
+      </view>
+      <view class="card_detail {{index == 2 ?'active':''}}" bindtap="toggleClick" data-index="2">
+        卡号+卡密
+      </view>
+    </view>
+
+    <view class="psd_first" wx:if='{{index == 1}}'>
+      <view class="enterInfo_2" wx:for='{{psdNum1}}' wx:key='id'>
+        <view class="enter_left">
+          <input type="text" class="shortInput mgt-20" placeholder="请输入卡密"></input>
+          <!-- <input type="text" class="shortInput" placeholder="请输入有效期"></input> -->
+          <picker mode="date" value="{{item.time}}" data-id="{{item.id}}" start="{{ruleTime}}" bindchange="bindDateChange">
+            <view class="picker" wx:if='{{!item.time}}'>
+              请选择有效期
+            </view>
+            <view class="picker blackFs" wx:if='{{item.time}}'>
+              有效期至: {{item.time}}
+            </view>
+          </picker>
+
+        </view>
+        <view class="deleteInfo mgt-20" wx:if='{{item.index!==0}}' data-id="{{item.id}}" bindtap="delete1">
+          <image class="deleteIcon" src="/assets/images/delete.png"></image>
+        </view>
+      </view>
+
+      <view class="addPsd" bindtap="addCoupon1">
+        <view class="addBox">
+          <image class="addIcon" src="/assets/images/add.png"></image>
+          <view class="addTxt">添加新卡密</view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="psd_second" wx:if='{{index == 2}}'>
+      <view class="second_2" wx:for='{{psdNum2}}' wx:key='id'>
+        <view class="second_left">
+          <input type="text" class="shortInput" placeholder="请输入卡号"></input>
+          <input type="text" class="shortInput" placeholder="请输入卡密"></input>
+           <picker mode="date" value="{{item.time}}" data-id="{{item.id}}" start="{{ruleTime}}" bindchange="bindDateChange">
+            <view class="picker" wx:if='{{!item.time}}'>
+              请选择有效期
+            </view>
+            <view class="picker" wx:if='{{item.time}}'>
+              有效期至: {{item.time}}
+            </view>
+          </picker>
+
+
+        </view>
+        <view class="second_right" wx:if='{{item.index!==0}}' data-id="{{item.id}}" bindtap="delete2">
+          <image class="deleteIcon" src="/assets/images/delete.png"></image>
+        </view>
+      </view>
+
+      <view class="addPsd" bindtap="addCoupon2">
+        <view class="addBox">
+          <image class="addIcon" src="/assets/images/add.png"></image>
+          <view class="addTxt">添加新卡密</view>
+        </view>
+      </view>
+    </view>
+    <text class="note" decode="true">
+      上传须知
+      aaaaaaaaaaaa
+    </text>
+  </view>
+  <view class="signUp">上传</view>
+</view>

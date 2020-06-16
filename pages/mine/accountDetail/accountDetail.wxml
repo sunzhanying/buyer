@@ -1,0 +1,17 @@
+<view class='accountDetail'>
+  <view class="infoCard">
+  <view class="item">
+    <view class="title">微信昵称</view>
+    <view class="Info">{{nikeName}}</view>
+  </view>
+    <view class="item">
+    <view class="title">真实姓名</view>
+    <view class="Info">{{name}}</view>
+    <image class="arrow" src='/assets/images/arrow.png'></image>
+  </view>
+    <view class="item">
+    <view class="title">绑定手机</view>
+    <view class="Info">{{tel}}</view>
+  </view>
+  </view>
+</view>

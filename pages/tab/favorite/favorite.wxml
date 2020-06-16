@@ -1,0 +1,27 @@
+<!--pages/tab/favorite/favorite.wxml-->
+<view class='height_100 bgc_F2F2F2 pad-20'>
+
+  <view class="favorite_li" bindtap="SignUpPsd">
+    <view class="left_icon">
+      <image class="left_icon" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582625887630&di=9f68d7d3b18ad92e1e5762fd252e5598&imgtype=0&src=http%3A%2F%2Fqcloud.dpfile.com%2Fpc%2F62CWkrdNjUkLG1ktiVcvBswbB7S9eoEZcAQPPkSb6n8zTSfv2liYsq1ryCXBVUUUTYGVDmosZWTLal1WbWRW3A.jpg"></image>
+    </view>
+
+    <view class="txt_container">
+      <view class="txt_first">星巴克大杯</view>
+      <view class="txt_second">
+        <view class="txt_second_left">完整截图</view>
+        <view class="txt_second_right">成交量 20</view>
+
+      </view>
+
+      <view class="txt_third">
+        <view class="money">￥30.5</view>
+        <view class="heart">
+        <image class="heart" src="/assets/images/favorite/heart.png"></image>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>

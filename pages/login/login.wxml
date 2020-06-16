@@ -1,0 +1,20 @@
+<view class='login_container'>
+    <!-- <view class='main'>
+        <image class='login_bg' src='../../assets/images/login/login_bg.png'></image>
+        <view class='login_pas'>
+            <image class="userinfo_logo_icon" src="../../assets/images/login/login_logo.png" mode="cover"></image>
+            <view class='userinfo_logo_li'>
+                <view class='userinfo_logo_title colorE4B78C'>酒+你</view>
+                <view class='userinfo_logo_subtitle colorE4B78C'>在这里，寻找你的Na一味</view>
+                <view>
+                    <image class='login_line_img' src='/assets/images/login/login_line.png'></image>
+                </view>
+
+            </view>
+            <view>
+                <button class='login_nav bg_835D4C_ECBC8F color333' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">立即登录</button>
+                <view class='colorE4B78C login_bz'>光明919诚邀您的加入</view>
+            </view>
+        </view>
+    </view> -->
+</view>

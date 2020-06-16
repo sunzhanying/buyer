@@ -1,0 +1,7 @@
+/* components/shoppingBounced/shoppingBounced.wxss */
+@import '/components/ordersBounced/ordersBounced.wxss';
+.shopping_btn{
+    background: #333;
+    color: #fff;
+    box-shadow:0rpx 4rpx 16rpx 0rpx rgba(51,51,51,0.8);
+}

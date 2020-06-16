@@ -1,0 +1,71 @@
+<!--pages/home/recipe/recipe.wxml-->
+
+<view class='recipe_pop_block' wx:if='{{pop}}' bindtap='closePop'></view>
+<view class='control'>
+    <view class="recipe_sreach_tab {{pop==true?'recipe_fixed':''}}">
+        <view class='recipe_sreach_box'>
+            <image src='/assets/images/Search.png'  class='recip_Search'></image>
+            <input type='text' placeholder='请输入关键字' value='{{searchValue}}' bindinput='changeInput'></input>
+        </view>
+        <view class="tab-box">
+            <view class="child {{item.chooce==true?'recipe_tab_c ':''}}" wx:for='{{nextTab}}' bindtap='tabClick' wx:key='id' data-id='{{index}}'>
+                <text>{{item.name}}</text>
+                <view class="  {{item.chooce==true?' recipe_tab_li_sjx_active':'recipe_tab_li_sjx'}}"></view>
+            </view>
+        </view>
+
+        <view class='tab-list' wx:if='{{pop}}'>
+            <scroll-view class="scroll-view_H" scroll-y style="height: 100%;">
+                <view class='tab-ui'>
+                    <view class='recipe_tab_li {{childItem.chooce==true ? "recipe_tab_li_active " : ""}}' wx:for='{{nextTab[tabChildIndex].child}}' wx:for-item="childItem" wx:for-index="idx" wx:key='id' data-index='{{idx}}' data-id='{{childItem.id}}' bindtap='childChoose'>{{childItem.name}}</view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+
+    <view class='recipe_list'> 
+            <!-- <view class="recipe_ul_list {{index%2==0?'':'mar_left10'}}" wx:for="{{courseList}}" wx:key="index" bindtap='navDetail' data-id="{{item.id}}">
+                <view class='recipe_selection_img'>
+                    <image class='recipe_selection_img' src='{{item.coverImg}}'></image>
+                </view>
+                <view class='activities_box'>
+                    <view class="recipe_selection_name over_hidd ">{{item.title}}</view>
+                    <view class=" flex_view jus_bew">
+                        <view class='recipe_selection_price_con '>
+                            <text wx:for="{{item.tagList}}" wx:for-item="_li"  wx:key="*this">{{_li.name}}</text>
+                        </view>
+                        <view class='recipe_selection_original_price' data-id="{{item.id}}" bindtap='checkDetailsBtn'>
+                        isLike    1喜欢  0 不喜欢
+                            <image class='collection_icon' src='/assets/images/dishes/{{item.isLike =="0"?"dishes_collection_icon.png":"collection_icon_select.png"}}'></image>
+                        </view> 
+                    </view>
+                </view>
+            </view> -->
+
+
+            <view class="recipe_ul_list " wx:for="{{courseList}}" wx:key="index" bindtap='navDetail' data-id="{{item.id}}">
+                <view class='recipe_selection_img'>
+                    <image class='recipe_selection_img' src='{{item.coverImg}}'></image>
+                </view>
+                <view class='activities_box'>
+                <view class=" flex_view jus_bew recipe_title_box">
+                    <view class="recipe_selection_name over_hidd ">{{item.title}}</view>
+                        <view class='recipe_selection_original_price' data-id="{{item.id}}" bindtap='checkDetailsBtn'>
+                        <!-- isLike    1喜欢  0 不喜欢 -->
+                            <image class='collection_icon' src='/assets/images/dishes/{{item.isLike =="0"?"dishes_collection_icon.png":"collection_icon_select.png"}}'></image>
+                        </view> 
+                </view>
+                <view class="recipe_tsubtitle_box" wx:if="{{item.intro}}">
+                   {{item.intro}}
+                </view>
+                    <view class=" flex_view jus_bew">
+                        <view class='recipe_selection_price_con '>
+                            <text wx:for="{{item.tagList}}" wx:for-item="_li"  wx:key="*this">{{_li.name}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+        <view class='no_course' wx:if="{{!noCourse}}">暂无数据~</view>
+    </view>
+</view>

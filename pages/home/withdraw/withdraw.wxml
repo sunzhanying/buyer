@@ -1,0 +1,56 @@
+<!--pages/home/withdraw/withdraw.wxml-->
+<view class="withdraw">
+
+  <view class="topCard">
+    <view class="number">0</view>
+    <view class="introduction">可提现收益(元)</view>
+    <view class="req">申请</view>
+    <view class="circuit">申请 > 审核 >结算至您的微信零钱</view>
+  </view>
+
+
+  <view class="statusList">
+
+    <view class="statusLi">
+      <view class="item">
+        <view class="status_txt">申请单号:</view>
+        <view class="container">1929734127187377237439</view>
+      </view>
+      <view class="item">
+       <view class="status_txt">申请时间:</view>
+        <view class="container">2019-08-24  12:00</view>
+      </view>
+      <view class="item">
+       <view class="status_txt">提现金额:</view>
+        <view class="container">100元</view>
+      </view>
+      <view class="item">
+       <view class="status_txt">状态:</view>
+        <view class="container wait">审核中</view>
+        <!-- <view class="container success">已转入微信钱包</view> -->
+      </view>
+
+    </view>
+    <view class="statusLi">
+      <view class="item">
+        <view class="status_txt">申请单号:</view>
+        <view class="container">1929734127187377237439</view>
+      </view>
+      <view class="item">
+       <view class="status_txt">申请时间:</view>
+        <view class="container">2019-08-24  12:00</view>
+      </view>
+      <view class="item">
+       <view class="status_txt">提现金额:</view>
+        <view class="container">100元</view>
+      </view>
+      <view class="item">
+       <view class="status_txt">状态:</view>
+        <view class="container wait">审核中</view>
+        <!-- <view class="container success">已转入微信钱包</view> -->
+      </view>
+
+    </view>
+  </view>
+
+</view>

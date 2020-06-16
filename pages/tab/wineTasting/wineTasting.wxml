@@ -1,0 +1,64 @@
+<view class='height_100 bg_f8f8f8 flex_view'>
+  <view class='wine_side'>
+    <scroll-view scroll-y class="wine_left_scroll" style="height: 100%" bindscrolltoupper="upper"
+      bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+      <view id="green" class="size28 wine_side_li flex_items_center {{item.choose?'colorE7C778 bg_f8f8f8':'color777'}}"
+        wx:for="{{varietiesWine}}" wx:key="index" data-index='{{index}}' data-typeid='{{item.id}}' bindtap='wineLIBtn'>
+        <image hidden="{{!item.choose}}" class='wine_Tasting_img' src='/assets/images/wine_Tasting_img.png'></image>
+        <view class="sideText">{{item.name}}</view>
+      </view>
+
+    </scroll-view>
+  </view>
+
+  <view class='wine_content'>
+    <scroll-view scroll-y style="height: 100%" class="wine_left_scroll" style="height: 100%">
+
+      <view style='padding: 0 20rpx;'>
+        <view class='por_rel' class='wine_banner_box'>
+          <swiper indicator-dots="{{indicatorDots}}" indicator-active-color="rgba(231, 199, 120, 1)"
+            indicator-color="#E2E2E2" circular="true" autoplay="{{autoplay}}" interval="{{interval}}"
+            duration="{{duration}}" class='slide_image_box'>
+            <block wx:for="{{bannerList}}" wx:key='index' class="">
+              <swiper-item class='slide_image_box'>
+                <navigator url='{{item.navUrl}}' hover-class='none' class='over_hidd slide_image_box'>
+                  <image src="{{item.img}}" class="slide_image" mode='widthFix' />
+                </navigator>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+
+        <view class='wine_search_box'>
+          <input name="input" class='wine_search_input' value='{{search}}' bindinput="searchPro"
+            placeholder="请输入关键词搜索" />
+          <image class='search_icon' src='/assets/images/search.png'></image>
+        </view>
+        <view>
+          <view class="wine_list_li" wx:for="{{wineList}}" wx:key="index" data-type="{{item.type}}"
+            data-id='{{item.id}}' bindtap='checkDetailsBtn'>
+
+            <view class='wine_list_li_img_box'>
+              <image class='wine_list_li_img' src="{{item.img}}"></image>
+            </view>
+            <view class='wine_list_li_con flex_direction'>
+              <view class='aa'>
+                <view class="wine_list_li_con_title num_blod">{{item.spmc}}</view>
+                <view class="stockBox">
+                  <view class="stock">库存<text class="num_blod">{{item.kc}}</text></view>
+                  <view class="Volume">成交量<text class="num_blod">{{item.cjl}}</text></view>
+                </view>
+              </view>
+              <view class="wine_list_li_con_price_box flex_center wine_list_li_con_border">
+
+                <view class='wine_list_li_con_price_con '>¥{{item.qyjg.csj}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+</view>

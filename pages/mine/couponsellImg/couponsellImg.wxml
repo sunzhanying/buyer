@@ -1,0 +1,60 @@
+<view class="couponsellImg">
+  <view class="cardInfo">
+    <view class="item">
+      <view class="title">名称</view>
+      <view class="detail">
+        携程50元礼品卡
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">价格</view>
+      <view class="detail">
+        ￥47.5
+      </view>
+    </view>
+    <view class="item">
+      <view class="title">来源</view>
+      <view class="detail">
+        ********
+      </view>
+    </view>
+  </view>
+  <!-- 卡券截图 -->
+  <view class="txtTitle">卡券截图</view>
+  <view class='cardBox'>
+    <view class='cardAdd mgt20' wx:for='{{cardList}}' wx:key='id'>
+      <view class="default_left" bindtap="chooseImageBtn">
+        <image src="/assets/images/roundAdd.png" class="roundAdd"></image>
+      </view>
+      <view class="default_right">
+        <input class="short_inp" placeholder="请输入兑换码"></input>
+  <picker mode="date" value="{{item.time}}" data-id="{{item.id}}" start="{{ruleTime}}" bindchange="bindDateChange">
+            <view class="picker" wx:if='{{!item.time}}'>
+              请选择有效期
+            </view>
+            <view class="picker blackFs" wx:if='{{item.time}}'>
+              有效期至: {{item.time}}
+            </view>
+          </picker>
+
+      </view>
+      <view class="deteleArea" data-id="{{item.id}}" wx:if='{{item.id!==0}}' bindtap="deletePsd">
+        <image src="/assets/images/delete.png" class="deleteIcon"></image>
+      </view>
+    </view>
+
+    <view class="addPsd" bindtap="addCoupon">
+      <view class="addBox">
+        <image class="addIcon" src="/assets/images/add.png"></image>
+        <view class="addTxt">添加新卡密</view>
+      </view>
+    </view>
+
+  </view>
+    <view class="signupNode" style="margin-top:64rpx;">
+    <view class="nodeDetail">上传须知</view>
+    <view class="nodeDetail">***********</view>
+    </view>
+  <view class="signUp">上传</view>
+ 
+</view>

@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/tab/wineTasting/wineTasting",
+    "pages/mine/memberInformation/memberInformation",
+    "pages/mine/couponSell/couponSell",
+    "pages/home/withdraw/withdraw",
+    "pages/mine/couponsellImg/couponsellImg",
+    "pages/tab/mine/mine",
+    "pages/tab/favorite/favorite",
+    "pages/mine/orderRecord/orderRecord",
+    "pages/mine/orderDetail/orderDetail",
+    "pages/mine/confirmOrder/confirmOrder",
+    "pages/mine/accountDetail/accountDetail",
+    "pages/wine/wineDetail/wineDetail",
+    "components/ordersBounced/ordersBounced"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "券享家",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#E7C778",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/tab/wineTasting/wineTasting",
+        "text": "卡券查询",
+        "iconPath": "/assets/images/tab/a.png",
+        "selectedIconPath": "/assets/images/tab/a1.png"
+      },
+      {
+        "pagePath": "pages/tab/mine/mine",
+        "text": "个人中心",
+        "iconPath": "/assets/images/tab/b.png",
+        "selectedIconPath": "/assets/images/tab/b1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

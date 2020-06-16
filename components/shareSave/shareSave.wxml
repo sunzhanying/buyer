@@ -1,0 +1,10 @@
+<!--components/shareSave/shareSave.wxml-->
+<view class='share_alert' hidden='{{!isShow}}'>
+    <view class='alert_container'>
+        <canvas canvas-id="myCanvas" style="width:620rpx;height:980rpx" />
+    </view>
+    <view class='alert_close'>
+        <image src='/assets/images/share_cancel.png' bindtap='closeAlertTap'></image>
+        <image src='/assets/images/share_download.png' catchtap='saveImage'></image>
+    </view>
+</view>

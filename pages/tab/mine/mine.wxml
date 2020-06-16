@@ -1,0 +1,65 @@
+<!--pages/tab/mine/mine.wxml-->
+<view class='height_100 bg_f8f8f8'>
+<!-- 用户端 -->
+	<view class='mine_banner'>
+		<view class="mine_scroll_box mine_banner_img">
+			<image class='mine_bg' src='/assets/images/mine_bg.png'></image>
+
+		</view>
+		<view class='mine_user_info'>
+
+			<view class='flex_items_center'>
+					<image class='head_portrait_img' src='{{wxtx ? wxtx:"/assets/images/head_portrait.png"}}'></image>
+					<view class='colorfff size28' wx:if="{{wxnc}}">{{wxnc}}</view>
+				<button class='head_portrait_info' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+					<view class='colorfff size32' wx:if="{{!wxnc}}">点击登录账户</view>
+				</button>
+
+			</view>
+
+			<view class='mine_nav_box'>
+				<view class='flex_center mine_title_box'>
+					<view class='color333 size28 mine_title_order'>我的订单</view>
+					<view class='' bindtap='allOrderBtn'>
+						<text class='coloraaaaaa size24'>查看订单</text>
+						<image class='arrow_icon' src='/assets/images/arrow_icon.png'></image>
+					</view>
+				</view>
+				<view class='flex_center mine_nav_ul'>
+					<div  class='chlid' data-index='{{item.index}}' bindtap='jumpDetail' wx:for="{{navList}}" wx:key="index">
+            <view class="math">{{item.math}}</view>
+						<view>{{item.title}}</view>
+					</div>
+				</view>
+
+			</view>
+
+			<view class='mine_list_box'>
+				<navigator url='' hover-class='none' class='mine_list flex_items_center'>
+					<view>
+						<image class="contact_service_img" src="/assets/images/contact_service_icon.png"></image>
+					</view>
+					<view class="flex_center mine_list_li border_bottom">
+						<view>联系客服</view>
+						<view>
+							<image class='arrow_icon' src='/assets/images/arrow_icon.png'></image>
+						</view>
+					</view>
+				</navigator>
+				<navigator hover-class='none' url='' class='mine_list flex_items_center'>
+					<view>
+						<image class="contact_service_img" src="/assets/images/about_us_icon.png"></image>
+					</view>
+					<view class="flex_center mine_list_li">
+						<view>关于我们</view>
+						<view>
+							<image class='arrow_icon' src='/assets/images/arrow_icon.png'></image>
+						</view>
+					</view>
+				</navigator>
+
+			</view>
+		</view>
+	</view>
+
+</view>

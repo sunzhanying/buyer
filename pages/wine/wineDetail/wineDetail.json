@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "详情",
+  "usingComponents": {
+    "ordersBounced": "/components/ordersBounced/ordersBounced",
+    "shoppingBounced": "/components/shoppingBounced/shoppingBounced",
+    "shareSave": "/components/shareSave/shareSave"
+  }
+}

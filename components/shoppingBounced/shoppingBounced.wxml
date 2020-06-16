@@ -1,0 +1,43 @@
+<!--components/shoppingBounced/shoppingBounced.wxml-->
+<view hidden="{{!isShow}}">
+        <view class="ca_cover" bindtap="close"></view>
+        <view class="confirm_alert wefare_inner">
+            <view class=" input_group">
+                <view class=" pos_rel">
+                    <view class="confirm_cancel_box" bindtap="_cancelOrder">
+                        <image class="confirm_cancel" src="/assets/images/confirm_cancel.png"></image>
+                    </view>
+                </view>
+                <view class="  choose_list">
+                    <view class="gi_img">
+                        <image class="gi_img" src="{{ordersImage}}"></image>
+                    </view>
+                    <view class="choose_info pos_rel">
+                        <view class="gii_title ">价格：<text style='color:#E7C778;'>¥</text>  <text class='gii_title_price'>{{price}}</text>
+                        </view>
+                        <view class="choose_price ">剩余库存：{{cnventory}}</view>
+                        <view >
+                             <text class='gii_title_text' wx:for="{{bqList}}" wx:key="*this">{{item}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="wefare_text">
+                    <view class="sel_num_title">
+                        选择数量
+                    </view>
+                    <view>
+                        <text class='num_add_icon'  catchtap="_reductionNum">-</text>
+                        <text class="gift_num vertical">{{numData}}</text>
+                        <text class='num_add_icon' catchtap="_addNum">+</text>
+                    </view>
+                </view>
+            </view>
+            <view class="pay_box ">
+                <view class="wefare_fn shopping_btn">
+                    <form bindsubmit="_wxPay" data-goodsId="" report-submit="true">
+                        <button class="wefare_fn shopping_btn" form-type="submit">加入购物车</button>
+                    </form>
+                </view>
+            </view>
+        </view>
+</view>

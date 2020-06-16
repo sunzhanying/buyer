@@ -1,0 +1,50 @@
+<import src="/wxParse/wxParse.wxml" />
+<!-- <wxs module="filters" src="../../../filters/filter.wxs"></wxs> -->
+<view>
+
+  <view class="wine_detail_banner_box txt_center">
+    <image src="{{goodsDetail.imgBig}}" mode="widthFix" class="wine_detail_banner"></image>
+  </view>
+  <view class='width_auto'>
+    <view class='wine_detail_txt_pic'>￥{{goodsDetail.qyjg.csj}}</view>
+    <view class='wine_detail_txt_title num_blod'>{{goodsDetail.spmc}}</view>
+    <view class='wine_detail_txt_subtitle'>{{goodsDetail.spfmc}}</view>
+    <view class="wine_detail_inventory">库存<text class="num_blod">{{goodsDetail.kc}}</text>/成交<text class="num_blod">{{goodsDetail.cjl}}</text></view>
+  </view>
+  <view class='clearance_box'></view>
+  <view class='width_auto pad_bottom'>
+    <view class='por_rel wine_detail_title_box'>
+      <image class='wine_detail_rule' src='/assets/images/wine_detail_rule.png'></image>
+      <view class='wine_detail_title'>详情</view>
+    </view>
+
+    <!-- 富文本 -->
+    <view class='content'>
+      <view class='' wx:if="{{introduce}}">
+        <text>{{introduce}}</text>
+      </view>
+      <view class=''>
+        <template is="wxParse" data="{{wxParseData:introducetext.nodes}}" />
+      </view>
+    </view>
+  </view>
+
+  <view class='footer_bottom bg_fff' wx:if="{{addOrderaddOrder}}">
+    <button class='btn_E7C778' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+      立即购买
+    </button>
+
+  </view>
+
+  <!-- price  商城价格
+            cnventory  库存
+            numData     购买数量
+            addNum    添加数量方法
+            reductionNum   减少数量方法
+            cancelOrder    取消方法
+         -->
+  <ordersBounced wx:if="{{!addOrderaddOrder}}" price='{{goodsDetail.qyjg.csj}}' title="{{goodsDetail.spmc}}"
+    cnventory='{{goodsDetail.kc}}' cjl='{{goodsDetail.cjl}}' numData='{{numData}}' ordersImage="{{goodsDetail.img}}"
+    bind:addNum="addNum" bq="{{goodsDetail.bqList}}" bind:reductionNum="reductionNum" bind:cancelOrder="onCancel"
+    bind:orderClose="wineClose" bind:submit='goDetail'></ordersBounced>
+</view>

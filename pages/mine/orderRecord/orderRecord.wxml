@@ -1,0 +1,99 @@
+<!--pages/mine/orderRecord/orderRecord.wxml-->
+<view class='container'>
+
+  <!-- 购买者 -->
+  <view  class='commet_tab'>
+    <view wx:for='{{consumerTab}}' wx:wx:key='*this' data-index='{{index}}' data-type='{{item.type}}' class="{{item.type==types?'commet_tab_c':''}}" bindtap='tabClick'>{{item.tit}}</view>
+  </view>
+<!-- 提交投诉 -->
+    <view class="toggle_list" wx:if='{{types == 2}}'>
+
+      <view class="boxCard" wx:for='{{yhqList}}' wx:key='id' data-id="{{item.id}}">
+        <view class="card_img_box">
+          <image class="card_img_box" src="{{item.spXx.img}}"></image>
+        </view>
+        <view class="card_info">
+          <view class="card_title num_blod num_blod">{{item.spXx.spmc}}</view>
+          <view class="amountNumber">数量<text class="num_blod">{{item.sl}}</text></view>
+          <view class="price">
+            <view class="price_number">￥{{item.payment}}</view>
+            <view class="submitTime">提交时间：{{item.createDate}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 代付款 -->
+    <view class="toggle_list" wx:if='{{types == 3}}'>
+     <view class="boxCard" wx:for='{{yhqList}}' wx:key='id' data-id="{{item.id}}" bindtap="orderDetail">
+        <view class="card_img_box">
+          <image class="card_img_box" src="{{item.spXx.img}}"></image>
+        </view>
+        <view class="card_info">
+          <view class="card_title num_blod">{{item.spXx.spmc}}</view>
+          <view class="amountNumber">数量<text class="num_blod"></text>{{item.sl}}</view>
+          <view class="price">
+            <view class="price_number">￥{{item.payment}}</view>
+            <view class="submitTime">提交时间：{{item.createDate}}</view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <!-- 已付款 -->
+    <view class="toggle_list" wx:if='{{types == 4}}'>
+      <view class="soldCard" wx:for='{{yhqList}}' wx:key='id' data-id="{{item.id}}"bindtap="orderDetail" > 
+        <view class="sold_card_top">
+          <view class="popICon">
+            <image class="popICon" src="{{item.khXx.wxtx}}"></image>
+          </view>
+          <view class="popName">{{item.khxx.wxnc}}</view>
+          <view class="end">已付款</view>
+        </view>
+
+        <view class="sold_card_bottom">
+          <view class="orderCode">订单编号：{{item.id}}</view>
+
+          <view class="orderInfo">
+            <view class="infoLeft">
+              <image class="infoLeft" src="{{item.spXx.img}}"></image>
+            </view>
+            <view class="infoRight">
+              <view class="orderTitle num_blod">{{item.spXx.spmc}}</view>
+              <view class="order_price">￥{{item.scj}}</view>
+              <view class="amount num_blod">×{{item.sl}}</view>
+            </view>
+          </view>
+
+          <view class="income">订单总价￥<text class="num_blod">{{item.actualPayment}}</text></view>
+        </view>
+
+      </view>
+    </view>
+    <!-- 纠纷中 -->
+    <view class="toggle_list" wx:if='{{types == 5}}'>
+
+      <view class="payed" wx:for='{{yhqList}}' wx:key='*this' data-id="{{item.id}}" >
+        <view class="sold_card_bottom">
+          <view class="payedCode">订单编号：{{item.id}}</view>
+
+          <view class="payedInfo">
+            <view class="payedinfoLeft">
+              <image class="payedinfoLeft" src="{{item.spXx.img}}"></image>
+            </view>
+            <view class="payedinfoRight">
+              <view class="payedTitle">{{item.spXx.spmc}}</view>
+              <view class="password" wx:if='{{item.spXx.type == 1}}'>卡密</view>
+              <view class="password" wx:if='{{item.spXx.type == 2}}'>卡号/卡密</view>
+              <view class="password" wx:if='{{item.spXx.type == 3}}'>兑换码</view>
+              <view class="payed_price">￥{{item.payment}}</view>
+              <view class="amount">×{{item.sl}}</view>
+            </view>
+          </view>
+
+          <view class="payed_income">订单总价￥{{item.actualPayment}}</view>
+        </view>
+
+      </view>
+    </view>
+</view>
