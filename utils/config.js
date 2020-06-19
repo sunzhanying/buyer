@@ -6,8 +6,10 @@
 
 
 //const DOMAIN = 'https://quanyi.lemondm.com/Equity'
-const DOMAIN = 'http://localhost/Equity'
+const DOMAIN = 'https://localhost/Equity'
+//const DOMAIN = 'https://quan.whaleupgo.com/Equity'
 //const NODOMAIN = 'https://quanyi.lemondm.com'
-const NODOMAIN = 'http://localhost'
+const NODOMAIN = 'https://localhost'
+//const NODOMAIN = 'https://quan.whaleupgo.com'
 module.exports.DOMAIN = DOMAIN
 exports.NODOMAIN = NODOMAIN
